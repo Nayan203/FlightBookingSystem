@@ -1,4 +1,3 @@
-# from DB_Connect import *
 import random
 import mysql.connector as db
 
