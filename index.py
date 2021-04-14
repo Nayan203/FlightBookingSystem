@@ -161,22 +161,30 @@ class Flight(object):
             query = ''' select * from businessclass where PName = '%s' '''
             cursor.execute(query% pname)
             detail = cursor.fetchall()
-            print('Passenger Name is:', detail[0][5])
-            print('Passenger Seat No. is:', detail[0][1])
-            print('Passenger Booking ID is:', detail[0][4])
-            print('Passenger Email ID is:', detail[0][6])
-            con.close()
-
+            if len(detail) > 0:
+                print('Passenger Name is:', detail[0][5])
+                print('Passenger Seat No. is:', detail[0][1])
+                print('Passenger Booking ID is:', detail[0][4])
+                print('Passenger Email ID is:', detail[0][6])
+                con.close()
+            else:
+                print('No data is found with this name.')
+            
+            
         elif check == 2:
             pname = input('Enter Passengers Name: ')
             query = '''select * from economyclass where PName = '%s' '''
             cursor.execute(query% pname)
             detail = cursor.fetchall()
-            print('Passenger Name is:', detail[0][5])
-            print('Passenger Seat No. is:', detail[0][1])
-            print('Passenger Booking ID is:', detail[0][4])
-            print('Passenger Email ID is:', detail[0][6])
-            con.close()
+            if len(detail) > 0:
+                print('Passenger Name is:', detail[0][5])
+                print('Passenger Seat No. is:', detail[0][1])
+                print('Passenger Booking ID is:', detail[0][4])
+                print('Passenger Email ID is:', detail[0][6])
+                con.close()
+            else:
+                print('No data is found with this name.')
+              
         else:
             print('Entered Wrong choice... Try Again!!')
 
